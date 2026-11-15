@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#1b2a4a" />
+  <meta name="description" content="Privacy Policy and AI Disclosure for Lexpira (com.lexpira)." />
+  <title>Privacy Policy — Lexpira</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Lexpira privacy policy home">
+      <span class="brand-mark" aria-hidden="true">L</span>
+      <span>Lexpira</span>
+    </a>
+    <nav aria-label="Page navigation">
+      <a href="#privacy">Overview</a>
+      <a href="#google-ml">Google ML Kit</a>
+      <a href="#byok-ai">BYOK AI</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="title">
+      <p class="eyebrow">Lexpira (com.lexpira) · Privacy &amp; AI Disclosure</p>
+      <h1 id="title">Privacy Policy</h1>
+      <p class="lead">Lexpira is an offline-first academic PDF reader, stylus workspace, and vocabulary study app built to keep your documents, handwriting, and notes on your device.</p>
+      <p class="meta">Effective date: November 15, 2026 · Last updated: November 15, 2026</p>
+    </section>
+
+    <section class="summary" aria-label="Privacy summary">
+      <article><strong>Local-first storage</strong><span>PDFs, ink strokes, annotations, research notes, vocabulary, and review schedules stay in private app storage.</span></article>
+      <article><strong>No accounts or ads</strong><span>Lexpira has no account registration, no advertising SDKs, no Advertising ID usage, and no developer analytics backend.</span></article>
+      <article><strong>Optional AI &amp; ML tools</strong><span>On-device Google ML Kit language tools and bring-your-own-key external AI providers stay disabled unless you opt in.</span></article>
+    </section>
+
+    <section id="privacy" class="card prose">
+      <h2>1. Overview</h2>
+      <p>This Privacy Policy explains how <strong>Lexpira</strong> (<code>com.lexpira</code>), published by <strong>KAIZOKU ONI YAZILIM VE TEKNOLOJI LIMITED SIRKETI</strong>, handles information. Core reading, dictionary packs, flashcards, handwriting, and local annotations operate offline without any cloud AI provider or developer server.</p>
+
+      <h2>2. Information Stored Locally on Your Device</h2>
+      <p>Lexpira keeps your PDFs, imported references, stylus handwriting strokes, PDF annotations, research notes, vocabulary entries, review schedules, offline dictionary packs, and app preferences inside the application’s private device storage.</p>
+      <ul>
+        <li>Android cloud app backup (<code>allowBackup</code>) is disabled.</li>
+        <li>Lexpira does not collect your name, contacts, advertising identifiers, or location.</li>
+        <li>Local AI usage statistics store only request counts, token counts, and timing metadata—never prompt text.</li>
+      </ul>
+
+      <h2 id="google-ml">3. Optional Google Language Tools &amp; On-Device Summarization</h2>
+      <p>Lexpira bundles Google ML Kit components for optional offline text recognition (OCR), language identification, machine translation, and on-device English article summarization. Auto-initialization is disabled (<code>MlKitInitProvider</code> removed), and these tools remain <strong>OFF by default</strong> until you explicitly grant in-app privacy consent.</p>
+      <ul>
+        <li><strong>On-device processing:</strong> OCR, language identification, and downloaded Google Translate models process text or image selections on your device. Input text and PDF contents are not uploaded to Google by these on-device APIs.</li>
+        <li><strong>ML Kit SDK telemetry:</strong> Once Google Language Tools are initialized, Google’s ML Kit SDK may transmit diagnostic/performance metrics (app info and performance) and device or instance identifiers to Google over encrypted transport for SDK diagnostics and model updates, as described in Google’s <a href="https://developers.google.com/ml-kit/terms#privacy" rel="noopener noreferrer">ML Kit Privacy Terms</a> and <a href="https://developers.google.com/ml-kit/android-data-disclosure" rel="noopener noreferrer">ML Kit Android Data Disclosure</a>.</li>
+        <li><strong>On-device GenAI summarization:</strong> When supported by the device, Lexpira’s optional English summarization feature uses Google’s public ML Kit GenAI API (Android AICore / Gemini Nano) after runtime support checks and user confirmation, with no automatic cloud fallback. Consistent with <a href="https://developers.google.com/ml-kit/genai/terms" rel="noopener noreferrer">Google’s ML Kit GenAI Terms</a>, GenAI features are intended exclusively for users aged <strong>18 and over</strong>.</li>
+        <li><strong>Disabling &amp; clearing caches:</strong> Disabling Google tools blocks future operations, though diagnostics from an already initialized SDK in the current session may continue independently per Google’s SDK behavior. You can clear language caches and delete downloaded translation models in Vocabulary settings.</li>
+      </ul>
+
+      <h2 id="byok-ai">4. Optional External &amp; Bring-Your-Own-Key (BYOK) AI Providers</h2>
+      <p>External AI features are disabled until you choose a provider—such as built-in EVREN, or optional user-configured OpenAI, Google Gemini, Anthropic Claude, OpenRouter, Groq, DeepSeek, Mistral AI, custom OpenAI-compatible HTTPS endpoints, or local loopback servers (for example Ollama)—configure your own credentials where required, accept any applicable provider terms, and enable processing.</p>
+      <ul>
+        <li><strong>Bounded payloads:</strong> Explicit AI actions transmit only the selected word or passage, an optional bounded containing sentence (omitted when “selected text only” is enabled), target language, and selected dictionary sense data directly from your device to the configured endpoint. Lexpira never uploads whole PDFs automatically and previews bounded payloads as configured.</li>
+        <li><strong>Key security:</strong> User-supplied API keys are stored using Android Keystore-backed encryption and are excluded from exports and diagnostic logs.</li>
+        <li><strong>Third-party terms:</strong> Requests sent to an external AI provider are governed by that provider’s own terms of service and privacy policy and may incur provider charges under your own account.</li>
+        <li><strong>Consent revocation:</strong> You can disable AI providers, revoke remembered per-document caching consent, and clear local AI caches in AI settings at any time.</li>
+      </ul>
+
+      <h2>5. File Access, Sharing &amp; Speech</h2>
+      <ul>
+        <li><strong>PDF import:</strong> Uses Android’s system document picker so you grant access only to files you select.</li>
+        <li><strong>Sharing:</strong> Sharing creates a scoped temporary PDF copy exposed read-only via Android <code>FileProvider</code> without modifying the source PDF. Cached share copies expire after one day and are cleaned up on later share actions. External receiving apps control copies after handoff.</li>
+        <li><strong>Text-to-speech:</strong> Prefers Android speech voices marked for offline use; installed speech engines are managed by Android and your selected TTS engine.</li>
+      </ul>
+
+      <h2>6. Data Retention &amp; Deletion</h2>
+      <p>Because Lexpira has no developer account system or developer-operated cloud database, uninstalling Lexpira or clearing the app’s storage in Android settings permanently deletes all locally stored documents, notes, vocabulary, AI caches, and API keys from your device.</p>
+      <p>If you enabled Google Language Tools, any SDK diagnostic telemetry collected by Google is governed by Google’s retention practices under the ML Kit disclosure; telemetry is limited to SDK diagnostics and device/instance identifiers and does not allow account-based deletion through Lexpira. If you configured an external BYOK AI provider, retention of submitted prompts is governed by that provider’s policy.</p>
+
+      <h2>7. Target Audience (18+)</h2>
+      <p>Lexpira is designed for adult academic researchers and students aged <strong>18 years and older</strong>, in alignment with Google ML Kit GenAI terms. Lexpira is not directed at children under 18 and does not knowingly collect personal information from minors.</p>
+
+      <h2>8. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy to reflect app updates or legal requirements. Updates will be posted on this page with a revised “Last updated” date, alongside the in-app privacy notice.</p>
+
+      <h2 id="contact">9. Contact</h2>
+      <p>Developer: KAIZOKU ONI YAZILIM VE TEKNOLOJI LIMITED SIRKETI</p>
+      <p>Support &amp; privacy inquiries: <a href="mailto:fehmi@kaizokuoni.com">fehmi@kaizokuoni.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year">2026</span> KAIZOKU ONI YAZILIM VE TEKNOLOJI LIMITED SIRKETI. Lexpira.</p>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
